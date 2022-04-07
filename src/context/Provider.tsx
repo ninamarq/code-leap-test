@@ -7,7 +7,7 @@ export interface IProps {
 }
 
 function Provider({ children }: IProps): JSX.Element {
-  const [username, setUsername] = useState("ola");
+  const [username, setUsername] = useState("");
   const [posts, setPosts] = useState([
     { id: 0, title: "none", content: "none" },
   ]);

@@ -3,11 +3,13 @@ import { useContext } from "react";
 import UserContext, { IUserContext } from "../context/UserContext";
 
 function SignUp() {
-  const { setUsername }: IUserContext = useContext(UserContext);
+  const { username, setUsername }: IUserContext = useContext(UserContext);
 
   const handleChange = (event: { target: HTMLInputElement }) => {
     setUsername?.(event.target.value);
   };
+
+  const verifyUsername: boolean = username.length > 0;
 
   return (
     <div>
@@ -21,7 +23,13 @@ function SignUp() {
           placeholder="John doe"
         />
       </label>
-      <button type="button">Enter</button>
+      <button
+        disabled={!verifyUsername}
+        type="button"
+        onClick={() => console.log("oi")}
+      >
+        Enter
+      </button>
     </div>
   );
 }
