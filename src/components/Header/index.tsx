@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1>CodeLeap Network</h1>
+      <h2>CodeLeap Network</h2>
       <h3>{username}</h3>
     </header>
   );
