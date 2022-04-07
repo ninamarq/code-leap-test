@@ -1,16 +1,27 @@
-import { createContext } from "react";
+import { createContext, SetStateAction, Dispatch } from "react";
 
-interface IPosts {
-  id: number;
-  title: string;
-  content: string;
-}
+import IPosts from "../interfaces/IPosts";
 
-interface IUser {
+export interface IUserContext {
   username: string;
+  setUsername?: (value: string) => void;
   posts?: IPosts[];
+  setPosts?: Dispatch<
+    SetStateAction<
+      {
+        id: number;
+        title: string;
+        content: string;
+      }[]
+    >
+  >;
 }
 
-const AppContext = createContext<IUser>({ username: "", posts: [] });
+const defaultState = {
+  username: "",
+  posts: [],
+};
+
+const AppContext = createContext<IUserContext>(defaultState);
 
 export default AppContext;

@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
-import UserContext from "../context/UserContext";
+import { useContext } from "react";
+
+import UserContext, { IUserContext } from "../context/UserContext";
 
 function SignUp() {
-  const { username } = useContext(UserContext);
+  const { setUsername }: IUserContext = useContext(UserContext);
+  console.log(setUsername);
   return (
     <div>
-      <h1>Welcome to CodeLeap network! {username}</h1>
+      <h1>Welcome to CodeLeap network!</h1>
       <label htmlFor="username-sign">
         Please enter your username
         <input id="username-sign" type="text" placeholder="John doe" />
