@@ -1,11 +1,13 @@
 import { useState, useContext, useEffect } from "react";
 
 import UserContext from "../../context/UserContext";
+import { createPost } from "../../services/createPost";
 import { getPosts } from "../../services/getPosts";
 
 export default function PostWriting() {
-  const { setPosts } = useContext(UserContext);
+  const { username, posts, setPosts } = useContext(UserContext);
   const [currentPost, setCurrentPost] = useState({
+    username,
     title: "defaultTitle",
     content: "defaultContent",
   });
@@ -20,7 +22,7 @@ export default function PostWriting() {
   useEffect(() => {
     const postsAPI = async () => setPosts?.(await getPosts());
     postsAPI();
-  }, []);
+  }, [posts]);
 
   return (
     <div>
@@ -44,7 +46,9 @@ export default function PostWriting() {
             onChange={(e) => handleChange(e)}
           />
         </label>
-        <button type="button">CREATE</button>
+        <button type="button" onClick={() => createPost(currentPost)}>
+          CREATE
+        </button>
       </section>
     </div>
   );
