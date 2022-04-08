@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import { useState, useContext, ChangeEvent } from "react";
+import "./style.scss";
 
 import UserContext from "../../context/UserContext";
 import { createPost } from "../../services/createPost";
@@ -11,7 +12,14 @@ export default function PostWriting() {
     content: "",
   });
 
-  const handleChange = (event: { target: HTMLInputElement }) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCurrentPost({
+      ...currentPost,
+      [event.target.id]: event.target.value,
+    });
+  };
+
+  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setCurrentPost({
       ...currentPost,
       [event.target.id]: event.target.value,
@@ -29,7 +37,7 @@ export default function PostWriting() {
   };
 
   return (
-    <div>
+    <div className="post-writing-container">
       <h2>What’s on your mind?</h2>
       <section>
         <label htmlFor="title">
@@ -44,12 +52,11 @@ export default function PostWriting() {
         </label>
         <label htmlFor="content">
           Content
-          <input
+          <textarea
             id="content"
-            type="textarea"
             placeholder="Content here"
             value={currentPost.content}
-            onChange={(e) => handleChange(e)}
+            onChange={(e) => handleTextAreaChange(e)}
           />
         </label>
         <button type="button" onClick={handleCreating}>

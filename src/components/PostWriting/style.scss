@@ -1,0 +1,34 @@
+.post-writing-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: fit-content;
+  margin: 5%;
+  padding: 2%;
+  border: 1px solid #999999;
+
+  h2 {
+    margin: 2% 0;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+
+    #title {
+      width: 97.25%;
+    }
+
+    #content {
+      word-break: break-all;
+      margin: 2% 0;
+      padding: 1%;
+      width: 97.25%;
+      height: 100%;
+      font-family: 'Roboto';
+      border: 1px solid #777777;
+      border-radius: 4px;
+      resize: none;
+    }
+  }
+}
