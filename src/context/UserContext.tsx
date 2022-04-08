@@ -12,14 +12,18 @@ export interface IUserContext {
         id: number;
         title: string;
         content: string;
+        username: string;
       }[]
     >
   >;
+  creating: boolean;
+  setCreating?: Dispatch<SetStateAction<boolean>>;
 }
 
 const defaultState = {
   username: "",
   posts: [],
+  creating: false,
 };
 
 const AppContext = createContext<IUserContext>(defaultState);

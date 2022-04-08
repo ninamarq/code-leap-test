@@ -1,5 +1,9 @@
+import IUser from "./IUser";
+
 export default interface IPosts {
-  id: number;
+  id?: number;
   title: string;
   content: string;
+  username: string;
+  created_datetime?: Date;
 }
