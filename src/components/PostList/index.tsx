@@ -7,9 +7,9 @@ import { PostCard } from "../PostCard";
 
 export default function PostList() {
   const { setPosts, posts, creating, setCreating } = useContext(UserContext);
+  const postsAPI = async () => setPosts?.(await getPosts());
 
   useEffect(() => {
-    const postsAPI = async () => setPosts?.(await getPosts());
     postsAPI();
     setCreating?.(false);
   }, [creating]);
@@ -17,7 +17,7 @@ export default function PostList() {
   return (
     <div className="post-list-container">
       {posts?.map((element) => (
-        <PostCard postObject={element} />
+        <PostCard key={element.id} postObject={element} />
       ))}
     </div>
   );
