@@ -4,11 +4,11 @@ import UserContext from "../../context/UserContext";
 import { createPost } from "../../services/createPost";
 
 export default function PostWriting() {
-  const { username, setCreating, creating } = useContext(UserContext);
+  const { username, setCreating } = useContext(UserContext);
   const [currentPost, setCurrentPost] = useState({
     username,
-    title: "defaultTitle",
-    content: "defaultContent",
+    title: "",
+    content: "",
   });
 
   const handleChange = (event: { target: HTMLInputElement }) => {
@@ -19,7 +19,11 @@ export default function PostWriting() {
   };
 
   const handleCreating = () => {
-    console.log(creating);
+    setCurrentPost({
+      username,
+      title: "",
+      content: "",
+    });
     setCreating?.(true);
     createPost(currentPost);
   };
@@ -35,6 +39,7 @@ export default function PostWriting() {
             type="text"
             placeholder="Hello world!"
             onChange={(e) => handleChange(e)}
+            value={currentPost.title}
           />
         </label>
         <label htmlFor="content">
@@ -43,6 +48,7 @@ export default function PostWriting() {
             id="content"
             type="textarea"
             placeholder="Content here"
+            value={currentPost.content}
             onChange={(e) => handleChange(e)}
           />
         </label>
