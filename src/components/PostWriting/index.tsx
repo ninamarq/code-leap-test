@@ -1,9 +1,10 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import UserContext from "../../context/UserContext";
+import { getPosts } from "../../services/getPosts";
 
 export default function PostWriting() {
-  const { posts, setPosts } = useContext(UserContext);
+  const { setPosts } = useContext(UserContext);
   const [currentPost, setCurrentPost] = useState({
     title: "defaultTitle",
     content: "defaultContent",
@@ -16,24 +17,10 @@ export default function PostWriting() {
     });
   };
 
-  const handleClick = () => {
-    if (posts?.[0].id === 0) {
-      setPosts?.([
-        { id: 1, title: currentPost.title, content: currentPost.content },
-      ]);
-    }
-    return (
-      posts &&
-      setPosts?.([
-        ...posts,
-        {
-          id: posts?.length,
-          title: currentPost.title,
-          content: currentPost.content,
-        },
-      ])
-    );
-  };
+  useEffect(() => {
+    const postsAPI = async () => setPosts?.(await getPosts());
+    postsAPI();
+  }, []);
 
   return (
     <div>
