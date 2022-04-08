@@ -9,8 +9,9 @@ export interface IProps {
 function Provider({ children }: IProps): JSX.Element {
   const [username, setUsername] = useState("");
   const [posts, setPosts] = useState([
-    { id: 0, title: "none", content: "none" },
+    { id: 0, title: "none", content: "none", username: "" },
   ]);
+  const [creating, setCreating] = useState(false);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const objStates = {
@@ -18,6 +19,8 @@ function Provider({ children }: IProps): JSX.Element {
     setUsername,
     posts,
     setPosts,
+    creating,
+    setCreating,
   };
 
   return (

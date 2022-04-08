@@ -1,4 +1,5 @@
 import Header from "../../components/Header";
+import PostList from "../../components/PostList";
 import PostWriting from "../../components/PostWriting";
 
 function MainScreen() {
@@ -6,6 +7,7 @@ function MainScreen() {
     <div>
       <Header />
       <PostWriting />
+      <PostList />
     </div>
   );
 }
