@@ -4,10 +4,10 @@
 # 📁 Technologies #
 This project was developed using the following technologies:
 
-* [React](https://reactjs.org/)
-* [Typescript](https://www.typescriptlang.org/)
-* [Sass](https://sass-lang.com/)
-* [React Icons](https://react-icons.github.io/react-icons/)
+* <a href="https://reactjs.org/">React.js</a>
+* <a href="https://www.typescriptlang.org/">Typescript</a>
+* <a href="https://sass-lang.com/">Sass/CSS</a>
+* <a href="https://react-icons.github.io/react-icons/">React Icons</a>
 
 # 🎬 Getting started #
 **Clone the project and access the folder**
