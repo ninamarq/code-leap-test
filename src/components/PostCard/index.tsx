@@ -1,8 +1,8 @@
-import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import "./style.scss";
 
 import IPosts from "../../interfaces/IPosts";
+import { EditPost } from "../EditPost";
 
 export function PostCard(props: { postObject: IPosts }) {
   const { postObject } = props;
@@ -13,7 +13,7 @@ export function PostCard(props: { postObject: IPosts }) {
         <h2>{title}</h2>
         <div>
           <MdDeleteForever onClick={() => console.log("Delete")} />
-          <FaEdit onClick={() => console.log("Edit")} />
+          <EditPost postId={id} postUser={username} />
         </div>
       </header>
       <main>
@@ -21,7 +21,7 @@ export function PostCard(props: { postObject: IPosts }) {
           <p>@{username}</p>
           <p>{created_datetime}</p>
         </div>
-        <p>{content}</p>
+        <p className="content-card">{content}</p>
       </main>
     </section>
   );
