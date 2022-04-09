@@ -1,34 +1,23 @@
 import { useContext, useEffect } from "react";
-import { FaEdit } from "react-icons/fa";
-import { MdDeleteForever } from "react-icons/md";
+import "./style.scss";
 
 import UserContext from "../../context/UserContext";
 import { getPosts } from "../../services/getPosts";
+import { PostCard } from "../PostCard";
 
 export default function PostList() {
   const { setPosts, posts, creating, setCreating } = useContext(UserContext);
+  const postsAPI = async () => setPosts?.(await getPosts());
 
   useEffect(() => {
-    const postsAPI = async () => setPosts?.(await getPosts());
     postsAPI();
     setCreating?.(false);
   }, [creating]);
 
   return (
-    <div>
+    <div className="post-list-container">
       {posts?.map((element) => (
-        <section key={element.id}>
-          <header>
-            <h1>{element.title}</h1>
-            <FaEdit onClick={() => console.log("Edit")} />
-            <MdDeleteForever onClick={() => console.log("Delete")} />
-          </header>
-          <div>
-            <p>{element.username}</p>
-            <p>{element.created_datetime}</p>
-          </div>
-          <p>{element.content}</p>
-        </section>
+        <PostCard key={element.id} postObject={element} />
       ))}
     </div>
   );

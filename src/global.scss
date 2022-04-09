@@ -1,4 +1,55 @@
 body {
+  margin: 0;
   font-family: 'Roboto';
   background-color: #E5E5E5;
+  font-size: 1rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      margin: 2% 0;
+      width: 96.5%;
+      height: 100%;
+      padding: 1.25%;
+      border: 1px solid #777777;
+      border-radius: 4px;
+    }
+
+    textarea {
+      word-break: break-all;
+      margin: 2% 0;
+      padding: 1%;
+      width: 97.25%;
+      height: 100%;
+      font-family: 'Roboto';
+      border: 1px solid #777777;
+      border-radius: 4px;
+      resize: none;
+    }
+  }
+  
+  button {
+    align-self: flex-end;
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    background-color: #000000;
+    color: #FFF;
+    font-weight: 700;
+    transition: .5s;
+
+    &:hover {
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.825);
+      transition: .5s;
+    }
+
+    &:disabled {
+      background-color: #8888;
+      cursor: not-allowed;
+    }
+  }
 }

@@ -1,0 +1,47 @@
+.post-card {
+    margin: 0 0 6% 0;
+    width: 94.5%;
+    border: 1px solid #777777;
+    word-break: break-all;
+
+  header {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #FFF;
+    width: 100%;
+    padding: 0;
+    h2 {
+      padding: 0 2%;
+    }
+
+    div svg {
+      margin: 0 1rem 0 1rem;
+      font-size: 1.4375rem;
+      transition: .5s;
+
+      &:hover {
+        transition: .5s;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.825);
+      }
+    }
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+
+    .user-time-post {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: #777777;
+    }
+  }
+}

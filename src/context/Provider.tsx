@@ -12,6 +12,7 @@ function Provider({ children }: IProps): JSX.Element {
     { id: 0, title: "none", content: "none", username: "" },
   ]);
   const [creating, setCreating] = useState(false);
+  const [editing, setEditing] = useState("editing");
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const objStates = {
@@ -21,6 +22,8 @@ function Provider({ children }: IProps): JSX.Element {
     setPosts,
     creating,
     setCreating,
+    editing,
+    setEditing,
   };
 
   return (

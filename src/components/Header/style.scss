@@ -1,0 +1,11 @@
+.main-screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  color: #FFF;
+  width: 100%;
+  h2 {
+    padding: 0 2rem;
+  }
+}
