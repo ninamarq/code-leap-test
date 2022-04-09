@@ -1,20 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 
+import UserContext from "../../context/UserContext";
 import { WritePost } from "../WritePost";
 
 export function EditPost(props: {
   postId: number | undefined;
   postUser: string;
 }) {
+  const { setEditing } = useContext(UserContext);
   const { postId, postUser } = props;
-  const [editing, setEditing] = useState(false);
+  const [edit, setEdit] = useState(false);
   const handleClick = () => {
-    setEditing(true);
+    setEdit(true);
+    setEditing?.("editingPost");
   };
 
-  return editing ? (
-    <WritePost typePost="SAVE" id={postId} user={postUser} click={setEditing} />
+  return edit ? (
+    <WritePost typePost="SAVE" id={postId} user={postUser} click={setEdit} />
   ) : (
     <FaEdit onClick={handleClick} />
   );

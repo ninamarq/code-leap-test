@@ -1,4 +1,5 @@
 import { useContext, useState, ChangeEvent } from "react";
+import "./style.scss";
 
 import UserContext from "../../context/UserContext";
 import { createPost } from "../../services/createPost";
@@ -11,9 +12,10 @@ export function WritePost(props: {
   click: (value: boolean) => void;
 }) {
   const { typePost, id, user, click } = props;
-  const { setCreating } = useContext(UserContext);
+  const { setCreating, setEditing, editing, username } =
+    useContext(UserContext);
   const [currentPost, setCurrentPost] = useState({
-    username: user,
+    username: typePost === "CREATE" ? username : user,
     title: "",
     content: "",
   });
@@ -27,11 +29,12 @@ export function WritePost(props: {
 
   const handleClick = () => {
     setCurrentPost({
-      username: user,
+      username: "",
       title: "",
       content: "",
     });
     setCreating?.(true);
+    setEditing?.("notEditing");
     click(false);
     return typePost === "SAVE"
       ? updatePost(currentPost, id)
@@ -44,9 +47,9 @@ export function WritePost(props: {
       [event.target.id]: event.target.value,
     });
   };
-
   return (
-    <section>
+    <section className={typePost}>
+      {typePost === "SAVE" && <h1>Edit Item</h1>}
       <label htmlFor="title">
         Title
         <input

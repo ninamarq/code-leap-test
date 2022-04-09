@@ -18,12 +18,15 @@ export interface IUserContext {
   >;
   creating: boolean;
   setCreating?: Dispatch<SetStateAction<boolean>>;
+  editing: string;
+  setEditing?: Dispatch<SetStateAction<string>>;
 }
 
 const defaultState = {
   username: "",
   posts: [],
   creating: false,
+  editing: "notEditing",
 };
 
 const AppContext = createContext<IUserContext>(defaultState);

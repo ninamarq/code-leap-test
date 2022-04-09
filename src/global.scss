@@ -17,6 +17,18 @@ body {
       border: 1px solid #777777;
       border-radius: 4px;
     }
+
+    textarea {
+      word-break: break-all;
+      margin: 2% 0;
+      padding: 1%;
+      width: 97.25%;
+      height: 100%;
+      font-family: 'Roboto';
+      border: 1px solid #777777;
+      border-radius: 4px;
+      resize: none;
+    }
   }
   
   button {
