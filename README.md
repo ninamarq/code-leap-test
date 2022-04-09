@@ -9,7 +9,11 @@ This project was developed using the following technologies:
 * <a href="https://sass-lang.com/">Sass/CSS</a>
 * <a href="https://react-icons.github.io/react-icons/">React Icons</a>
 
-# 🎬 Getting started #
+# 🎬 Demonstration
+
+<img src="./src/assets/app-demo.gif" alt="demonstration" />
+
+# Getting started #
 **Clone the project and access the folder**
 ~~~
 $ git clone git@https://github.com/ninamarq/code-leap-test/ && cd code-leap-test
