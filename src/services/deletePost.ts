@@ -1,4 +1,4 @@
-export function deletePost(id: number) {
+export function deletePost(id: number | undefined) {
   const URL = `https://dev.codeleap.co.uk/careers/${id}/`;
   const requestOptions = {
     method: "DELETE",
