@@ -15,9 +15,8 @@ export function convertDate(date: Date | undefined) {
   const differenceHour = nowHour - Number(hourCreated);
 
   if (nowHour === Number(hourCreated)) {
-    console.log(differenceMinutes);
     return differenceMinutes === 0
-      ? "Now"
+      ? "seconds ago"
       : `${
           differenceMinutes < 1 ? differenceMinutes * -1 : differenceMinutes
         } minutes ago`;
