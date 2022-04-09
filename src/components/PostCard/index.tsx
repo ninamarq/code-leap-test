@@ -5,6 +5,7 @@ import "./style.scss";
 import UserContext from "../../context/UserContext";
 import IPosts from "../../interfaces/IPosts";
 import { deletePost } from "../../services/deletePost";
+import { convertDate } from "../../services/convertDate";
 import { EditPost } from "../EditPost";
 
 export function PostCard(props: { postObject: IPosts }) {
@@ -28,7 +29,7 @@ export function PostCard(props: { postObject: IPosts }) {
       <main>
         <div className="user-time-post">
           <p>@{username}</p>
-          <p>{created_datetime}</p>
+          <p>{convertDate(created_datetime)}</p>
         </div>
         <p className="content-card">{content}</p>
       </main>
