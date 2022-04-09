@@ -3,6 +3,7 @@ export function deletePost(id: number | undefined) {
   const requestOptions = {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
   };
   fetch(URL, requestOptions)
     .then((response) => response.json())
