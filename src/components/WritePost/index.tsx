@@ -12,8 +12,7 @@ export function WritePost(props: {
   click: (value: boolean) => void;
 }) {
   const { typePost, id, user, click } = props;
-  const { setCreating, setEditing, editing, username } =
-    useContext(UserContext);
+  const { setCreating, setEditing, username } = useContext(UserContext);
   const [currentPost, setCurrentPost] = useState({
     username: typePost === "CREATE" ? username : user,
     title: "",
