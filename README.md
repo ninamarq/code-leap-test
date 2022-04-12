@@ -17,7 +17,7 @@ This project was developed using the following technologies:
 # Getting started #
 **Clone the project and access the folder**
 ~~~
-$ git clone git@https://github.com/ninamarq/code-leap-test/ && cd code-leap-test
+$ git clone git@github.com:ninamarq/code-leap-test.git && cd code-leap-test
 ~~~
 **Follow the steps below**
 ~~~
