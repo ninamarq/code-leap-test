@@ -9,9 +9,9 @@ import { deletePost } from "../../services/deletePost";
 import { EditPost } from "../EditPost";
 
 export function PostCard(props: { postObject: IPosts }) {
-  const { setCreating } = useContext(UserContext);
+  const { setCreating, username } = useContext(UserContext);
   const { postObject } = props;
-  const { id, title, username, created_datetime, content } = postObject;
+  const { id, title, created_datetime, content } = postObject;
   const handleDelete = () => {
     setCreating?.(true);
     deletePost(id);
@@ -21,10 +21,12 @@ export function PostCard(props: { postObject: IPosts }) {
     <section key={id} className="post-card">
       <header>
         <h2>{title}</h2>
-        <div>
-          <MdDeleteForever onClick={handleDelete} />
-          <EditPost postId={id} postUser={username} />
-        </div>
+        {postObject.username === username && (
+          <div>
+            <MdDeleteForever onClick={handleDelete} />
+            <EditPost postId={id} postUser={username} />
+          </div>
+        )}
       </header>
       <main>
         <div className="user-time-post">
