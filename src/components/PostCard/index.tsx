@@ -31,7 +31,7 @@ export function PostCard(props: { postObject: IPosts }) {
       </header>
       <main>
         <div className="user-time-post">
-          <p>@{username}</p>
+          <p>@{postObject.username}</p>
           <p>{convertDate(created_datetime)}</p>
         </div>
         <p className="content-card">{content}</p>
