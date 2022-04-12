@@ -1,6 +1,7 @@
 # Code Leap - Frontend Jr Test
 ### Website delivered: https://code-leap-test-8cn06wivj-ninamarq.vercel.app/
 ### Completed Website: https://code-leap-test-pl8zwx6hb-ninamarq.vercel.app/
+[Pull-Request Completed Project](https://github.com/ninamarq/code-leap-test/pull/7)
 
 # 📁 Technologies #
 This project was developed using the following technologies:
