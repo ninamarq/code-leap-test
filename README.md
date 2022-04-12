@@ -21,12 +21,12 @@ $ git clone git@https://github.com/ninamarq/code-leap-test/ && cd code-leap-test
 **Follow the steps below**
 ~~~
 # Install the dependencies
-$ npm install
+$ yarn install
 ~~~
 
 ~~~
 # Run the project
-$ npm start
+$ yarn start
 ~~~
 
 ~~~
