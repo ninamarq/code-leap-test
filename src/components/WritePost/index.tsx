@@ -28,7 +28,6 @@ export function WritePost(props: {
 
   const handleClick = () => {
     setCurrentPost({
-      username: "",
       title: "",
       content: "",
     });
