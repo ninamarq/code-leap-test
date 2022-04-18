@@ -27,12 +27,12 @@ export function WritePost(props: {
   };
 
   const handleClick = () => {
+    setCreating?.(true);
     setCurrentPost({
       username: "",
       title: "",
       content: "",
     });
-    setCreating?.(true);
     setEditing?.("notEditing");
     click(false);
     return typePost === "SAVE"
